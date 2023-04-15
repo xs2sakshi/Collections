@@ -1,0 +1,50 @@
+Interfaces:
+Iterator<-Collection<-List,Queue,Set
+SortedSet<-Set
+
+Classes:
+List<-LinkedList,ArrayList,Vector
+LL implements DEQUEUE & LIST
+AL implements LIST
+
+Iterator
+ListIterator
+
+Map
+HashMap-<LinkedHashMap(insertion order)
+
+HashTable:
+doesn't allow null, synchronized
+
+ConcurrentHashMap:
+Map is divided into partitions and only a part of the map will be locked during modification operation
+putIfAbsent(key,value)
+putAll(),clear() not correct
+not useful if we want to loack entire map
+Iteration over CHM is weekly consistent
+
+Collections.synchornizedMap(HashMap) --> Can synchronize HashMap but the entire map will be locked during modification operation
+
+get(key)-> locate bucket
+Collision
+LinkedList-> equals()
+Binary Tree
+
+hashcode()
+equals()
+
+HashSet,TreeSet
+
+HastSet internall-> stores in HashTable and implements set
+add(key)->calls map.put(key,PRESENT)  of HashMap and checks the return value which if null, element is added  if older value returned, not added
+unique elements
+
+TreeSet
+sorted in asc order
+Unique elements
+
+FailFast-> ConcurrentModification , work on original object, can't modify after Iterator is created
+HashMap,Vector,ArrayList
+
+FailSafe-> work on copy, remove,add don't change original object
+Iterators,ConcurrentHashMap
