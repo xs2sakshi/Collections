@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+public class CollectionsPractise {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	
+		ArrayList<Integer> ar=new ArrayList<Integer>();
+		for(int i=0;i<10;i++){
+		ar.add(i);}
+		Iterator<Integer> it=ar.iterator();
+		
+		while(it.hasNext())
+		{System.out.println(it.next());}
+		
+		System.out.println("Using For Each");
+		for(int k:ar)
+		{System.out.println(k);}
+		
+		HashMap<String,OnlineClass> myMap=new HashMap<String,OnlineClass>();
+		
+		OnlineClass oc=new OnlineClass();
+		oc.setStudId(123);
+		oc.setStudCourse("Communications");
+		oc.setStudName("Ajay");
+		myMap.put(oc.getStudCourse(),oc);
+		
+		OnlineClass oc1= myMap.get("Communications");
+		System.out.println(oc1.getStudName());
+		System.out.println(myMap.size());
+		
+		for(Entry<String,OnlineClass> e:myMap.entrySet()){
+		System.out.println(e.getKey());
+		System.out.println(e.getValue().getStudId());}
+				
+		
+		
+	}
+	
+}
